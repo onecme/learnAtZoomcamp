@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fct_trips   
+    columns:
+      - name: trip_id
+        description: "Surrogate primary key for each trip"
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,9 @@
+sources:
+  - name: raw_data
+    description: "Raw data sources for NYC taxi rides"
+    database: zoomcamp-3
+    schema: ny_taxi
+    tables:
+      - name: green_tripdata_partitioned
+      - name: yellow_HW_tripdata_partitioned
+      

@@ -1,0 +1,38 @@
+models:
+  - name: monthly_revenue_per_locations
+    description: >
+      Mart model that aggregates total revenue and trip metrics per pickup and 
+      dropoff location on a monthly basis. This model is designed for reporting 
+      and business analysis, enabling revenue comparison across taxi zones 
+      over time.
+
+    columns:
+      - name: revenue_month
+        description: Month of the trip in YYYY-MM format used for aggregation
+        data_tests:
+          - not_null
+
+      - name: pickup_location_id
+        description: TLC Taxi Zone where the trip started
+        data_tests:
+          - not_null
+
+      - name: dropoff_location_id
+        description: TLC Taxi Zone where the trip ended
+        data_tests:
+          - not_null
+
+      - name: total_trips
+        description: Total number of trips for the given pickup and dropoff location within the month
+
+      - name: total_revenue
+        description: Sum of total_amount for all trips in the given month and location combination
+
+      - name: total_fare_amount
+        description: Sum of fare_amount for all trips in the given month and location combination
+
+      - name: total_tip_amount
+        description: Sum of tip_amount collected for the given month and location combination
+
+      - name: avg_trip_distance
+        description: Average trip distance in miles for the given month and location combination
